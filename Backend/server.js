@@ -1,10 +1,11 @@
 import app from "./src/app.js"
 import mongoose from "mongoose"
+import dotenv from "dotenv"
 
-
+dotenv.config()
 
 async function connectDb(){
-    await mongoose.connect("mongodb+srv://subratpaleibabul_db_user:FvZSmZeammVt0diM@cluster0.twfovf4.mongodb.net/day-33")
+    await mongoose.connect(process.env.MONGO_URI)
 
     console.log("connected to database")
 }
